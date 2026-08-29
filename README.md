@@ -1,8 +1,17 @@
 # Morrandy — Loja de semi joias
 
+## Loja online (abra este link)
+
+**https://morrandy.vercel.app**
+
+- Admin: https://morrandy.vercel.app/admin/login  
+- Código no GitHub: https://github.com/gustavosena972-wq/morrandy  
+
+> O GitHub guarda o **código**. A loja que o cliente vê fica na **Vercel** (link acima).
+
 Projeto **independente** da CodeCraft Solutions e do CodeCraft Gestão.
 
-Loja virtual completa com vitrine futurista, carrinho, checkout, estoque e painel admin.
+Loja virtual completa com vitrine clara, carrinho, checkout, estoque e painel admin.
 
 ## Stack
 
