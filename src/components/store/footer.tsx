@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function StoreFooter() {
   return (
-    <footer className="mt-auto border-t border-white/8 bg-[#050507]">
+    <footer className="mt-auto border-t border-[var(--line)] bg-white/70">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <div className="font-display text-lg tracking-[0.3em] text-[var(--cream)]">MORRANDY</div>

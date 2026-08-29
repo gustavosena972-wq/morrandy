@@ -139,7 +139,7 @@ export default function CheckoutPage() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 space-y-2 border-t border-white/10 pt-4">
+          <div className="mt-6 space-y-2 border-t border-[var(--line)] pt-4">
             <div className="flex justify-between text-[var(--muted)]">
               <span>Subtotal</span>
               <span>{formatBRL(subtotalCents)}</span>

@@ -19,7 +19,7 @@ export default async function LojaPage() {
           {categories.map((c) => (
             <span
               key={c.id}
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-[var(--muted)]"
+              className="rounded-full border border-[var(--line)] bg-white px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-[var(--muted)] shadow-sm"
             >
               {c.name}
             </span>

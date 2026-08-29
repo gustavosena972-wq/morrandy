@@ -30,7 +30,7 @@ export function ProductDetail({ product }: Props) {
     <div className="px-4 py-12 sm:px-6">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
         <div className="glass overflow-hidden rounded-[2rem]">
-          <div className="aspect-[4/5] bg-gradient-to-br from-white/5 to-transparent">
+          <div className="aspect-[4/5] bg-gradient-to-br from-[#f3efe8] to-white">
             {imgs[0] ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={imgs[0]} alt={product.name} className="h-full w-full object-cover" />
@@ -59,7 +59,7 @@ export function ProductDetail({ product }: Props) {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5">
+            <div className="inline-flex items-center rounded-full border border-[var(--line)] bg-white shadow-sm">
               <button type="button" className="p-3" onClick={() => setQty((q) => Math.max(1, q - 1))} aria-label="Diminuir">
                 <Minus className="h-4 w-4" />
               </button>

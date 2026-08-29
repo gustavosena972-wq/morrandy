@@ -30,14 +30,14 @@ export default function CarrinhoPage() {
                   <p className="mt-1 text-[var(--muted)]">{formatBRL(item.priceCents)}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <button type="button" className="rounded-full border border-white/10 p-2" onClick={() => setQuantity(item.productId, item.quantity - 1)}>
+                  <button type="button" className="rounded-full border border-[var(--line)] bg-white p-2" onClick={() => setQuantity(item.productId, item.quantity - 1)}>
                     <Minus className="h-4 w-4" />
                   </button>
                   <span>{item.quantity}</span>
-                  <button type="button" className="rounded-full border border-white/10 p-2" onClick={() => setQuantity(item.productId, item.quantity + 1)}>
+                  <button type="button" className="rounded-full border border-[var(--line)] bg-white p-2" onClick={() => setQuantity(item.productId, item.quantity + 1)}>
                     <Plus className="h-4 w-4" />
                   </button>
-                  <button type="button" className="rounded-full border border-white/10 p-2 text-red-300" onClick={() => removeItem(item.productId)}>
+                  <button type="button" className="rounded-full border border-[var(--line)] bg-white p-2 text-red-600" onClick={() => removeItem(item.productId)}>
                     <Trash2 className="h-4 w-4" />
                   </button>
                 </div>

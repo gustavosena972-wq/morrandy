@@ -20,9 +20,9 @@ export default async function AdminProductsPage() {
         </Link>
       </div>
 
-      <div className="mt-8 overflow-x-auto rounded-3xl border border-white/8">
+      <div className="mt-8 overflow-x-auto rounded-3xl border border-[var(--line)] bg-white">
         <table className="min-w-full text-left text-sm">
-          <thead className="bg-white/5 text-[var(--muted)]">
+          <thead className="bg-[#f6f3ee] text-[var(--muted)]">
             <tr>
               <th className="px-4 py-3">Peça</th>
               <th className="px-4 py-3">Preço</th>
@@ -33,7 +33,7 @@ export default async function AdminProductsPage() {
           </thead>
           <tbody>
             {products.map((p) => (
-              <tr key={p.id} className="border-t border-white/8">
+              <tr key={p.id} className="border-t border-[var(--line)]">
                 <td className="px-4 py-3">
                   <div className="font-medium">{p.name}</div>
                   <div className="text-xs text-[var(--muted)]">{p.category?.name || "Sem categoria"}</div>
@@ -41,7 +41,7 @@ export default async function AdminProductsPage() {
                 <td className="px-4 py-3">{formatBRL(p.priceCents)}</td>
                 <td className="px-4 py-3">{p.stock}</td>
                 <td className="px-4 py-3">
-                  <span className={`rounded-full px-2 py-1 text-xs ${p.active ? "bg-emerald-500/15 text-emerald-200" : "bg-white/10 text-[var(--muted)]"}`}>
+                  <span className={`rounded-full px-2 py-1 text-xs ${p.active ? "bg-emerald-100 text-emerald-800" : "bg-[#f0ebe3] text-[var(--muted)]"}`}>
                     {p.active ? "Ativo" : "Inativo"}
                   </span>
                 </td>

@@ -9,8 +9,8 @@ export function HeroSection() {
     <section className="relative overflow-hidden px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,175,118,0.18),transparent_65%)] blur-3xl"
-        animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.8, 0.5] }}
+        className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(184,146,74,0.22),transparent_65%)] blur-3xl"
+        animate={{ scale: [1, 1.08, 1], opacity: [0.45, 0.75, 0.45] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_.9fr]">
@@ -18,7 +18,7 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/25 bg-[var(--gold)]/10 px-4 py-1.5 text-xs uppercase tracking-[0.28em] text-[var(--gold)]"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 bg-white/80 px-4 py-1.5 text-xs uppercase tracking-[0.28em] text-[var(--gold-deep)] shadow-sm"
           >
             <Sparkles className="h-3.5 w-3.5" />
             Nova coleção
@@ -30,7 +30,7 @@ export function HeroSection() {
             className="font-display text-5xl leading-[0.95] text-[var(--cream)] sm:text-6xl lg:text-7xl"
           >
             Brilho futurista.
-            <span className="block text-[var(--gold)]">Elegância atemporal.</span>
+            <span className="block text-[var(--gold-deep)]">Elegância atemporal.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -49,14 +49,14 @@ export function HeroSection() {
           >
             <Link
               href="/loja"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)] px-6 py-3 text-sm font-semibold text-[#1a1208] transition hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:brightness-105"
             >
               Ver loja
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="#colecao"
-              className="inline-flex items-center gap-2 rounded-full border border-white/12 px-6 py-3 text-sm text-[var(--cream)] transition hover:border-[var(--gold)]/35 hover:bg-white/5"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/80 px-6 py-3 text-sm text-[var(--cream)] shadow-sm transition hover:border-[var(--gold)]/40"
             >
               Explorar coleção
             </Link>
@@ -70,18 +70,18 @@ export function HeroSection() {
           className="relative mx-auto aspect-square w-full max-w-md"
         >
           <motion.div
-            className="absolute inset-8 rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-md"
+            className="absolute inset-8 rounded-[2rem] border border-[var(--line)] bg-white/70 shadow-xl backdrop-blur-md"
             animate={{ rotate: [0, 2, 0, -2, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute inset-0 rounded-[2rem] border border-[var(--gold)]/20"
+            className="absolute inset-0 rounded-[2rem] border border-[var(--gold)]/25"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
           <div className="absolute inset-0 grid place-items-center">
             <div className="text-center">
-              <div className="font-display text-6xl tracking-[0.4em] text-[var(--gold)]">M</div>
+              <div className="font-display text-6xl tracking-[0.4em] text-[var(--gold-deep)]">M</div>
               <p className="mt-3 text-xs uppercase tracking-[0.35em] text-[var(--muted)]">Morrandy · semi joias</p>
             </div>
           </div>

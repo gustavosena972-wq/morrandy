@@ -6,9 +6,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   const session = await getAdminSession();
 
   return (
-    <div className="min-h-screen bg-[#09090d] text-[var(--cream)]">
+    <div className="min-h-screen bg-[var(--bg)] text-[var(--cream)]">
       {session ? (
-        <header className="border-b border-white/8 bg-black/40 backdrop-blur-xl">
+        <header className="border-b border-[var(--line)] bg-white/80 backdrop-blur-xl">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
             <div>
               <Link href="/admin" className="font-display text-2xl tracking-[0.25em]">
