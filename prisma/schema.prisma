@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  name         String
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("mr_admin_users")
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  sortOrder Int       @default(0) @map("sort_order")
+  products  Product[]
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  @@map("mr_categories")
+}
+
+model Product {
+  id           String      @id @default(cuid())
+  name         String
+  slug         String      @unique
+  description  String      @default("")
+  priceCents   Int         @map("price_cents")
+  compareCents Int?        @map("compare_cents")
+  material     String      @default("")
+  sku          String      @default("")
+  stock        Int         @default(0)
+  images       String      @default("[]")
+  featured     Boolean     @default(false)
+  active       Boolean     @default(true)
+  categoryId   String?     @map("category_id")
+  category     Category?   @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  orderItems   OrderItem[]
+  createdAt    DateTime    @default(now()) @map("created_at")
+  updatedAt    DateTime    @updatedAt @map("updated_at")
+
+  @@index([active, featured])
+  @@index([categoryId])
+  @@map("mr_products")
+}
+
+model Order {
+  id                 String      @id @default(cuid())
+  code               String      @unique
+  status             String      @default("pending")
+  customerName       String      @map("customer_name")
+  customerEmail      String      @map("customer_email")
+  customerPhone      String      @map("customer_phone")
+  customerCpf        String      @default("") @map("customer_cpf")
+  shippingStreet     String      @map("shipping_street")
+  shippingNumber     String      @map("shipping_number")
+  shippingDistrict   String      @map("shipping_district")
+  shippingCity       String      @map("shipping_city")
+  shippingState      String      @map("shipping_state")
+  shippingZip        String      @map("shipping_zip")
+  shippingComplement String      @default("") @map("shipping_complement")
+  paymentMethod      String      @default("pix") @map("payment_method")
+  subtotalCents      Int         @map("subtotal_cents")
+  shippingCents      Int         @default(0) @map("shipping_cents")
+  totalCents         Int         @map("total_cents")
+  notes              String      @default("")
+  items              OrderItem[]
+  createdAt          DateTime    @default(now()) @map("created_at")
+  updatedAt          DateTime    @updatedAt @map("updated_at")
+
+  @@index([status, createdAt(sort: Desc)])
+  @@map("mr_orders")
+}
+
+model OrderItem {
+  id             String   @id @default(cuid())
+  orderId        String   @map("order_id")
+  order          Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId      String?  @map("product_id")
+  product        Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productName    String   @map("product_name")
+  productSlug    String   @map("product_slug")
+  unitPriceCents Int      @map("unit_price_cents")
+  quantity       Int
+
+  @@index([orderId])
+  @@map("mr_order_items")
+}

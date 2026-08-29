@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #060608;
+  --surface: rgba(255, 255, 255, 0.04);
+  --cream: #f5f2eb;
+  --muted: #9a958c;
+  --gold: #d4af76;
+  --gold-deep: #a8844f;
+  --line: rgba(255, 255, 255, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--cream);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-body), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.glass {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(16px);
+}
+
+.input {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.85rem 1rem;
+  color: var(--cream);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: color-mix(in srgb, var(--gold) 45%, white);
+  box-shadow: 0 0 0 3px rgba(212, 175, 118, 0.12);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #1a1208;
+  padding: 0.85rem 1.4rem;
+  font-weight: 600;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.06);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--cream);
+  padding: 0.85rem 1.4rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-ghost:hover {
+  border-color: color-mix(in srgb, var(--gold) 35%, white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.grid-glow {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
