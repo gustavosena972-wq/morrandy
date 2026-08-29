@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { formatBRL } from "@/lib/money";
 import { parseImages } from "@/lib/catalog";
 
@@ -15,41 +14,34 @@ type ProductCardProps = {
   material?: string;
 };
 
-export function ProductCard({ id, slug, name, priceCents, compareCents, images, material }: ProductCardProps) {
+export function ProductCard({ slug, name, priceCents, compareCents, images, material }: ProductCardProps) {
   const imgs = parseImages(images);
   const cover = imgs[0];
 
   return (
-    <motion.article
-      layout
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      whileHover={{ y: -6 }}
-      className="group overflow-hidden rounded-3xl border border-[var(--line)] bg-white shadow-[0_10px_30px_rgba(28,25,22,0.06)]"
-    >
+    <article className="group overflow-hidden rounded-3xl border-2 border-black bg-white shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition hover:-translate-y-1">
       <Link href={`/produto/${slug}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-[#f3efe8] to-white">
+        <div className="relative aspect-[4/5] overflow-hidden bg-[#f3efe8]">
           {cover ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={cover} alt={name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={cover} alt={name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           ) : (
             <div className="flex h-full items-center justify-center">
-              <div className="h-24 w-24 rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/10 shadow-[0_0_40px_rgba(184,146,74,0.2)]" />
+              <div className="h-24 w-24 rounded-full border-2 border-[#6e5424] bg-[#6e5424]/15" />
             </div>
           )}
         </div>
         <div className="space-y-2 p-5">
-          {material ? <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--gold-deep)]">{material}</p> : null}
-          <h3 className="font-display text-xl text-[var(--cream)]">{name}</h3>
+          {material ? <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6e5424]">{material}</p> : null}
+          <h3 className="font-display text-xl font-bold text-black">{name}</h3>
           <div className="flex items-baseline gap-2">
-            <span className="text-lg font-semibold text-[var(--cream)]">{formatBRL(priceCents)}</span>
+            <span className="text-lg font-bold text-black">{formatBRL(priceCents)}</span>
             {compareCents && compareCents > priceCents ? (
-              <span className="text-sm text-[var(--muted)] line-through">{formatBRL(compareCents)}</span>
+              <span className="text-sm font-semibold text-[#555] line-through">{formatBRL(compareCents)}</span>
             ) : null}
           </div>
         </div>
       </Link>
-    </motion.article>
+    </article>
   );
 }

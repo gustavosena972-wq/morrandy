@@ -1,91 +1,51 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(184,146,74,0.22),transparent_65%)] blur-3xl"
-        animate={{ scale: [1, 1.08, 1], opacity: [0.45, 0.75, 0.45] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_.9fr]">
-        <div>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold-deep)] shadow-sm"
-          >
+        <div className="rounded-3xl border-2 border-black/10 bg-white/80 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-sm sm:p-8">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border-2 border-[#6e5424] bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#6e5424]">
             <Sparkles className="h-3.5 w-3.5" />
             Nova coleção
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
-            className="font-display text-5xl font-semibold leading-[0.95] text-[var(--cream)] sm:text-6xl lg:text-7xl"
-          >
+          </p>
+          <h1 className="font-display text-5xl font-bold leading-[1.05] text-black sm:text-6xl lg:text-7xl">
             Brilho futurista.
-            <span className="block text-[var(--gold-deep)]">Elegância atemporal.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.12 }}
-            className="mt-6 max-w-xl text-base font-medium leading-relaxed text-[var(--muted)] sm:text-lg"
-          >
+            <span className="block text-[#6e5424]">Elegância atemporal.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg font-semibold leading-relaxed text-[#2a2622]">
             Morrandy é uma loja de semi joias pensada para quem quer peças limpas, sofisticadas e com presença —
             do colar minimalista ao conjunto de impacto.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.18 }}
-            className="mt-8 flex flex-wrap gap-3"
-          >
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/loja"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--gold-deep)] px-6 py-3 text-sm font-bold text-white shadow-md transition hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-full bg-[#6e5424] px-6 py-3 text-sm font-bold text-white shadow-md transition hover:bg-[#5a441c]"
             >
               Ver loja
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="#colecao"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-6 py-3 text-sm font-semibold text-[var(--cream)] shadow-sm transition hover:border-[var(--gold)]"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-black bg-white px-6 py-3 text-sm font-bold text-black transition hover:bg-black hover:text-white"
             >
               Explorar coleção
             </Link>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.1, duration: 0.8 }}
-          className="relative mx-auto aspect-square w-full max-w-md"
-        >
-          <motion.div
-            className="absolute inset-8 rounded-[2rem] border border-[var(--line)] bg-white/70 shadow-xl backdrop-blur-md"
-            animate={{ rotate: [0, 2, 0, -2, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute inset-0 rounded-[2rem] border border-[var(--gold)]/25"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
+        <div className="relative mx-auto aspect-square w-full max-w-md">
+          <div className="absolute inset-0 rounded-[2rem] border-2 border-black/20 bg-white/85 shadow-[0_20px_50px_rgba(0,0,0,0.12)] backdrop-blur-sm" />
           <div className="absolute inset-0 grid place-items-center">
             <div className="text-center">
-              <div className="font-display text-6xl font-semibold tracking-[0.2em] text-[var(--gold-deep)]">M</div>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Morrandy · semi joias</p>
+              <div className="font-display text-7xl font-bold tracking-[0.12em] text-[#6e5424]">M</div>
+              <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-black">Morrandy · semi joias</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
