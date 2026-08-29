@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f6f3ee;
+  --bg: #f3efe8;
   --surface: #ffffff;
-  --cream: #1c1916;
-  --muted: #6f6860;
-  --gold: #b8924a;
-  --gold-deep: #8f6f35;
-  --line: rgba(28, 25, 22, 0.1);
+  --cream: #111111;
+  --muted: #3d3833;
+  --gold: #9a7a3a;
+  --gold-deep: #6e5424;
+  --line: rgba(17, 17, 17, 0.16);
 }
 
 @theme inline {
@@ -27,22 +27,25 @@ html {
 
 body {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(184, 146, 74, 0.14), transparent 55%),
-    linear-gradient(180deg, #fbf9f6 0%, var(--bg) 40%, #f3efe8 100%);
+    radial-gradient(ellipse 70% 40% at 50% -5%, rgba(154, 122, 58, 0.1), transparent 50%),
+    #f7f4ef;
   color: var(--cream);
   font-family: var(--font-body), system-ui, sans-serif;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 .font-display {
   font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--cream);
 }
 
 .glass {
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 12px 40px rgba(28, 25, 22, 0.05);
-  backdrop-filter: blur(16px);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(17, 17, 17, 0.06);
 }
 
 .input {
@@ -56,9 +59,13 @@ body {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.input::placeholder {
+  color: #7a736c;
+}
+
 .input:focus {
-  border-color: color-mix(in srgb, var(--gold) 55%, white);
-  box-shadow: 0 0 0 3px rgba(184, 146, 74, 0.16);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(154, 122, 58, 0.2);
 }
 
 .btn-primary {
@@ -67,15 +74,15 @@ body {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 999px;
-  background: var(--gold);
+  background: var(--gold-deep);
   color: #fff;
   padding: 0.85rem 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: filter 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.08);
 }
 
 .btn-ghost {
@@ -85,21 +92,22 @@ body {
   gap: 0.5rem;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.7);
+  background: #fff;
   color: var(--cream);
+  font-weight: 600;
   padding: 0.85rem 1.4rem;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .btn-ghost:hover {
-  border-color: color-mix(in srgb, var(--gold) 45%, white);
-  background: #fff;
+  border-color: var(--gold);
+  background: #faf7f2;
 }
 
 .grid-glow {
   background-image:
-    linear-gradient(rgba(28, 25, 22, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 25, 22, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at center, black, transparent 80%);
 }

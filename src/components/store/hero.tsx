@@ -18,7 +18,7 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 bg-white/80 px-4 py-1.5 text-xs uppercase tracking-[0.28em] text-[var(--gold-deep)] shadow-sm"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold-deep)] shadow-sm"
           >
             <Sparkles className="h-3.5 w-3.5" />
             Nova coleção
@@ -27,7 +27,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="font-display text-5xl leading-[0.95] text-[var(--cream)] sm:text-6xl lg:text-7xl"
+            className="font-display text-5xl font-semibold leading-[0.95] text-[var(--cream)] sm:text-6xl lg:text-7xl"
           >
             Brilho futurista.
             <span className="block text-[var(--gold-deep)]">Elegância atemporal.</span>
@@ -36,7 +36,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-[var(--muted)] sm:text-lg"
+            className="mt-6 max-w-xl text-base font-medium leading-relaxed text-[var(--muted)] sm:text-lg"
           >
             Morrandy é uma loja de semi joias pensada para quem quer peças limpas, sofisticadas e com presença —
             do colar minimalista ao conjunto de impacto.
@@ -49,14 +49,14 @@ export function HeroSection() {
           >
             <Link
               href="/loja"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:brightness-105"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--gold-deep)] px-6 py-3 text-sm font-bold text-white shadow-md transition hover:brightness-110"
             >
               Ver loja
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="#colecao"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/80 px-6 py-3 text-sm text-[var(--cream)] shadow-sm transition hover:border-[var(--gold)]/40"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-6 py-3 text-sm font-semibold text-[var(--cream)] shadow-sm transition hover:border-[var(--gold)]"
             >
               Explorar coleção
             </Link>
@@ -81,8 +81,8 @@ export function HeroSection() {
           />
           <div className="absolute inset-0 grid place-items-center">
             <div className="text-center">
-              <div className="font-display text-6xl tracking-[0.4em] text-[var(--gold-deep)]">M</div>
-              <p className="mt-3 text-xs uppercase tracking-[0.35em] text-[var(--muted)]">Morrandy · semi joias</p>
+              <div className="font-display text-6xl font-semibold tracking-[0.2em] text-[var(--gold-deep)]">M</div>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--muted)]">Morrandy · semi joias</p>
             </div>
           </div>
         </motion.div>

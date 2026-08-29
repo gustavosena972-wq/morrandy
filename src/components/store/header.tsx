@@ -19,19 +19,19 @@ export function StoreHeader() {
             M
           </motion.span>
           <div>
-            <div className="font-display text-xl tracking-[0.35em] text-[var(--cream)]">MORRANDY</div>
-            <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--muted)]">semi joias</div>
+            <div className="font-display text-xl font-semibold tracking-[0.18em] text-[var(--cream)]">MORRANDY</div>
+            <div className="text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--muted)]">semi joias</div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm text-[var(--muted)] md:flex">
-          <Link href="/loja" className="transition-colors hover:text-[var(--cream)]">
+        <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--cream)] md:flex">
+          <Link href="/loja" className="transition-colors hover:text-[var(--gold-deep)]">
             Loja
           </Link>
-          <Link href="/#colecao" className="transition-colors hover:text-[var(--cream)]">
+          <Link href="/#colecao" className="transition-colors hover:text-[var(--gold-deep)]">
             Coleção
           </Link>
-          <Link href="/#sobre" className="transition-colors hover:text-[var(--cream)]">
+          <Link href="/#sobre" className="transition-colors hover:text-[var(--gold-deep)]">
             Sobre
           </Link>
         </nav>

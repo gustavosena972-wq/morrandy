@@ -44,7 +44,7 @@ export function ProductDetail({ product }: Props) {
 
         <div>
           {product.material ? (
-            <p className="text-xs uppercase tracking-[0.28em] text-[var(--gold)]">{product.material}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold-deep)]">{product.material}</p>
           ) : null}
           <h1 className="font-display mt-3 text-5xl text-[var(--cream)]">{product.name}</h1>
           <div className="mt-4 flex items-baseline gap-3">
@@ -53,8 +53,8 @@ export function ProductDetail({ product }: Props) {
               <span className="text-[var(--muted)] line-through">{formatBRL(product.compareCents)}</span>
             ) : null}
           </div>
-          <p className="mt-6 leading-relaxed text-[var(--muted)]">{product.description || "Peça Morrandy com acabamento premium."}</p>
-          <p className="mt-4 text-sm text-[var(--muted)]">
+          <p className="mt-6 font-medium leading-relaxed text-[var(--muted)]">{product.description || "Peça Morrandy com acabamento premium."}</p>
+          <p className="mt-4 text-sm font-medium text-[var(--muted)]">
             {product.stock > 0 ? `${product.stock} unidade(s) disponível(is)` : "Indisponível"}
           </p>
 

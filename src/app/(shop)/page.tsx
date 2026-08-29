@@ -14,8 +14,8 @@ export default async function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-[var(--gold)]">Coleção</p>
-              <h2 className="font-display mt-2 text-4xl text-[var(--cream)]">Peças em destaque</h2>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold-deep)]">Coleção</p>
+              <h2 className="font-display mt-2 text-4xl font-semibold text-[var(--cream)]">Peças em destaque</h2>
             </div>
             <Link href="/loja" className="btn-ghost text-sm">
               Ver tudo
@@ -25,7 +25,7 @@ export default async function HomePage() {
           {featured.length === 0 ? (
             <div className="glass rounded-3xl p-10 text-center">
               <p className="font-display text-2xl text-[var(--cream)]">Em breve</p>
-              <p className="mt-3 text-[var(--muted)]">
+              <p className="mt-3 font-medium text-[var(--muted)]">
                 As peças Morrandy serão cadastradas em instantes. A vitrine já está pronta.
               </p>
             </div>
@@ -57,7 +57,7 @@ export default async function HomePage() {
           ].map(([title, text]) => (
             <article key={title} className="glass rounded-3xl p-6">
               <h3 className="font-display text-2xl text-[var(--cream)]">{title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{text}</p>
+              <p className="mt-3 text-sm font-medium leading-relaxed text-[var(--muted)]">{text}</p>
             </article>
           ))}
         </div>

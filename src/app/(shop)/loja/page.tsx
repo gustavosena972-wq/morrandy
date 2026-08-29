@@ -8,9 +8,9 @@ export default async function LojaPage() {
     <div className="px-4 py-12 sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10">
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--gold)]">Loja</p>
-          <h1 className="font-display mt-2 text-5xl text-[var(--cream)]">Todas as peças</h1>
-          <p className="mt-3 max-w-2xl text-[var(--muted)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold-deep)]">Loja</p>
+          <h1 className="font-display mt-2 text-5xl font-semibold text-[var(--cream)]">Todas as peças</h1>
+          <p className="mt-3 max-w-2xl font-medium text-[var(--muted)]">
             Explore colares, brincos, anéis, pulseiras e conjuntos Morrandy.
           </p>
         </div>
@@ -19,7 +19,7 @@ export default async function LojaPage() {
           {categories.map((c) => (
             <span
               key={c.id}
-              className="rounded-full border border-[var(--line)] bg-white px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-[var(--muted)] shadow-sm"
+              className="rounded-full border border-[var(--line)] bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--cream)] shadow-sm"
             >
               {c.name}
             </span>
